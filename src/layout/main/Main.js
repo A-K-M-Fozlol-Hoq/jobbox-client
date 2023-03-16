@@ -1,6 +1,6 @@
-import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
+import React from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Main = () => {
   const { pathname } = useLocation();
@@ -10,7 +10,7 @@ const Main = () => {
       <Navbar />
       <div
         className={` ${
-          pathname === "/" ? "max-w-[1600px] px-5" : "max-w-7xl"
+          pathname === '/' ? 'max-w-[1600px] px-5' : 'max-w-7xl'
         } max-w-[1600px] mx-auto`}
       >
         <Outlet />

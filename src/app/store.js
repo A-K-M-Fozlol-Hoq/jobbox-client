@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import apiSlice from '../api/apiSlice';
+import apiSlice from '../features/api/apiSlice';
 import authSlice from '../features/auth/authSlice';
 
 const store = configureStore({

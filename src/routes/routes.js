@@ -1,44 +1,45 @@
-import { createBrowserRouter } from "react-router-dom";
-import Dashboard from "../layout/dashboard/Dashboard";
-import Main from "../layout/main/Main";
-import AccountCreator from "../pages/register/AccountCreator";
-import Home from "../pages/home/Home";
-import JobDetails from "../pages/JobDetails";
-import Jobs from "../pages/Jobs";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
-import PrivateRoute from "../utils/PrivateRoute";
-import AddJob from "../pages/employeeDashboard/AddJob";
-import EmployerDashboard from "../pages/employeeDashboard/EmployerDashboard";
-import CandidateDashboard from "../pages/candidateDashboard/CandidateDashboard";
+import { createBrowserRouter } from 'react-router-dom';
+import Dashboard from '../layout/dashboard/Dashboard';
+import Main from '../layout/main/Main';
+import AccountCreator from '../pages/register/AccountCreator';
+import Home from '../pages/home/Home';
+import JobDetails from '../pages/JobDetails';
+import Jobs from '../pages/Jobs';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
+import PrivateRoute from '../utils/PrivateRoute';
+import AppliedJobs from '../pages/candidateDashboard/AppliedJobs';
+import AddJob from '../pages/employeeDashboard/AddJob';
+import EmployerDashboard from '../pages/employeeDashboard/EmployerDashboard';
+import CandidateDashboard from '../pages/candidateDashboard/CandidateDashboard';
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Main />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
       },
       {
-        path: "/jobs",
+        path: '/jobs',
         element: <Jobs />,
       },
       {
-        path: "/job-details/:id",
+        path: '/job-details/:id',
         element: <JobDetails />,
       },
       {
-        path: "/login",
+        path: '/login',
         element: <Login />,
       },
       {
-        path: "/signup",
+        path: '/signup',
         element: <Signup />,
       },
       {
-        path: "/register",
+        path: '/register',
         element: (
           <PrivateRoute>
             <AccountCreator />
@@ -46,7 +47,7 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/register/:type",
+        path: '/register/:type',
         element: (
           <PrivateRoute>
             <AccountCreator />
@@ -56,7 +57,7 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboard",
+    path: '/dashboard',
     element: (
       <PrivateRoute>
         <Dashboard />
@@ -64,15 +65,19 @@ const routes = createBrowserRouter([
     ),
     children: [
       {
-        path: "add-job",
+        path: 'applied-jobs',
+        element: <AppliedJobs />,
+      },
+      {
+        path: 'add-job',
         element: <AddJob />,
       },
       {
-        path: "employer",
+        path: 'employer',
         element: <EmployerDashboard />,
       },
       {
-        path: "candidate",
+        path: 'candidate',
         element: <CandidateDashboard />,
       },
     ],
